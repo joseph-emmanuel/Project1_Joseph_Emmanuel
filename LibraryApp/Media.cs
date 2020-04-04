@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryApp
 {
-    abstract class Media
+    public abstract class Media
     {
         #region Public Properties
         public string Title { get; private set;}
@@ -47,6 +47,12 @@ namespace LibraryApp
         {
             IsBorrowed = false;
             NameOfBorrower = "";
+        }
+
+        public void ModifyField(string _title,string _type)
+        {
+            Title = _title;
+            MediaType = _type;
         }
         #endregion
     }

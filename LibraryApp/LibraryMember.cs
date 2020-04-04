@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryApp
 {
-    class LibraryMember
+    public class LibraryMember
     {
         #region Private Properties
         public string Name { get; private set; }
@@ -17,14 +17,27 @@ namespace LibraryApp
             this.Name = _name;
         }
         #endregion
-/*        #region Public Methods
-*//*        public virtual string MemberInfo()
+        #region Public Methods
+        public string MemberInfo()
         {
-            var info = "Serial No. : " + SerialNumber + "\nTitle : " + Title + "\nType : " + MediaType + "\nNo. of times lent : " +
-                NumberOfTimesLent + "\nAvailable : " + ((IsBorrowed) ? "Yes" : "No") + "\nCurrently borrowed by : "
-                + NameOfBorrower + "\n";
-            return info;
-        }*/
+            return "\nName : " + Name;
+        }
+        public void ModifyField(string _newName)
+        {
+            Name = _newName;
+        }
+
+
+
+
+        /*        
+        *//*        public virtual string MemberInfo()
+                {
+                    var info = "Serial No. : " + SerialNumber + "\nTitle : " + Title + "\nType : " + MediaType + "\nNo. of times lent : " +
+                        NumberOfTimesLent + "\nAvailable : " + ((IsBorrowed) ? "Yes" : "No") + "\nCurrently borrowed by : "
+                        + NameOfBorrower + "\n";
+                    return info;
+                }*/
         #endregion
     }
 }

@@ -16,7 +16,7 @@ namespace LibraryApp
             new Book("The Da Vinci Code","Mystery Thriller",200),
             new Book("One Hundred Years of Solitude","Magic Mealism",125),
             new Book("Make Your Bed","Self-Help",144),
-            new Book("he Bridges of Madison County","Romance",342),
+            new Book("He Bridges of Madison County","Romance",342),
             #endregion 
             #region Magazine List
             new Magazine("Road and Track","Auto Mobile",59,4),
