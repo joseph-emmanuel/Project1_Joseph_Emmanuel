@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LibraryApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="701.25" Width="839">
-    <Grid Margin="25">
+    <Grid Margin="25" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -30,9 +30,9 @@
         <Button x:Name="LendMedia" Grid.Column="0" Grid.Row="0" Content="Lend Media" Margin="10" Grid.ColumnSpan="1" Click="LendMedia_Click"/>
         <Button x:Name="ReturnMedia" Grid.Column="0" Grid.Row="1" Content="Return Media" Margin="10" Grid.ColumnSpan="1"/>
         <Button x:Name="MediaInfo" Grid.Column="0" Grid.Row="2" Content="Media Info" Margin="10" Grid.ColumnSpan="1" Click="MediaInfo_Click"/>
-        <Button x:Name="MemberInfo" Grid.Column="0" Grid.Row="3" Content="Member Info" Margin="10" Grid.ColumnSpan="1"/>
-        <Button x:Name="ModifyMember" Grid.Column="2" Grid.Row="8" Content="Modify Member" Margin="10" Grid.ColumnSpan="1"/>
-        <Button x:Name="ModifyMedia" Grid.Column="4" Grid.Row="8" Content="Modify Media" Margin="10" Grid.ColumnSpan="1"/>
+        <Button x:Name="MemberInfo" Grid.Column="0" Grid.Row="3" Content="Member Info" Margin="10" Grid.ColumnSpan="1" Click="MemberInfo_Click"/>
+        <Button x:Name="ModifyMember" Grid.Column="2" Grid.Row="8" Content="Modify Member" Margin="10" Grid.ColumnSpan="1" Click="ModifyMember_Click"/>
+        <Button x:Name="ModifyMedia" Grid.Column="4" Grid.Row="8" Content="Modify Media" Margin="10" Grid.ColumnSpan="1" Click="ModifyMedia_Click"/>
         <!--#endregion-->
         <!--#region Data Grid For Media -->
         <DataGrid Name="mediaGrid" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="8" AutoGenerateColumns="False">
@@ -48,7 +48,7 @@
         <!--#region Data Grid For Library Members -->
         <DataGrid Name="libraryMembersGrid" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="1" Grid.RowSpan="4" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=OneWay}" Width="auto"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name,Mode=OneWay}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <!--#endregion-->
