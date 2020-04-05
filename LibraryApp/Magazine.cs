@@ -17,5 +17,9 @@ namespace LibraryApp
             this.IssueNumber = _issueNumber;
         }
         #endregion
+        public override string MediaInfo()
+        {
+            return base.MediaInfo() + "\nIssue Number : " + this.IssueNumber;
+        }
     }
 }

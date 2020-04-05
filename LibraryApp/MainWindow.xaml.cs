@@ -26,8 +26,6 @@ namespace LibraryApp
             //mediaGrid.ItemsSource =null;
             mediaGrid.ItemsSource = Library.AllMedia;
             libraryMembersGrid.ItemsSource = Library.allLibraryMember;
-           
-
         }
         public void RefreshDataGrid()
         {
@@ -36,13 +34,12 @@ namespace LibraryApp
 
             mediaGrid.ItemsSource = null;
             mediaGrid.ItemsSource = Library.AllMedia;
-
         }
 
-        private void LendMedia_Click(object sender, RoutedEventArgs e)
-        {
-            //Media selectedItem = mediaGrid.SelectedItem;
-        }
+
+
+
+
 
         private void MediaInfo_Click(object sender, RoutedEventArgs e)
         {
@@ -69,9 +66,9 @@ namespace LibraryApp
         private void ModifyMember_Click(object sender, RoutedEventArgs e)
         {
             ModifyMemberPage modifyMemberPage;
-            if(((LibraryMember)libraryMembersGrid.SelectedItem)!=null)
+            if (((LibraryMember)libraryMembersGrid.SelectedItem) != null)
             {
-               modifyMemberPage=new ModifyMemberPage((LibraryMember)(libraryMembersGrid.SelectedItem),this.Content);
+                modifyMemberPage = new ModifyMemberPage((LibraryMember)(libraryMembersGrid.SelectedItem), this.Content);
                 this.Content = modifyMemberPage;
             }
             else
@@ -94,6 +91,55 @@ namespace LibraryApp
                 MessageBox.Show("Please select a library item to  change  their Info.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+        }
+        private void LendMedia_Click(object sender, RoutedEventArgs e)
+        {
+            Media selectedMedia = (Media)mediaGrid.SelectedItem;
+            if ((mediaGrid.SelectedItem == null) || (libraryMembersGrid.SelectedItem == null))
+            {
+                MessageBox.Show("Make sure to select one member and one media that is lenting.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            if (!selectedMedia.IsBorrowed)
+            {
+                MessageBox.Show("'" + selectedMedia.Title + "' is currently unavailable.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                var media = selectedMedia;
+                var member = ((LibraryMember)libraryMembersGrid.SelectedItem);
+                var name = member.Name;
+                media.LentMedia(name);
+                member.AddMediaToHistory(media);
+                member.AddMediaToBorrowedList(media);
+                MessageBox.Show("'" + selectedMedia.Title + "' is Lent to " + member.Name, "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+
+            RefreshDataGrid();
+        }
+        private void ReturnMedia_Click(object sender, RoutedEventArgs e)
+        {
+            Media selectedMedia = (Media)mediaGrid.SelectedItem;
+            if (mediaGrid.SelectedItem == null)
+            {
+                MessageBox.Show("Make sure to select one media to return it back .", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+            else
+            {
+                var media = selectedMedia;
+                var member = Library.allLibraryMember.Find(x => x.Name == selectedMedia.NameOfBorrower);
+                if (!media.IsBorrowed)
+                {
+                    media.ReturnMedia();
+                    member.RemoveMediaFromBorrowedList(media);
+                    MessageBox.Show("'" + media.Title + "' is returned by " + member.Name, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                    MessageBox.Show("'" + media.Title + "' is currently in the Library.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+            }
+            RefreshDataGrid();
         }
     }
 }

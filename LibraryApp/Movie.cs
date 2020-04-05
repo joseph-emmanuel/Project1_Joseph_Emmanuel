@@ -17,5 +17,10 @@ namespace LibraryApp
             this.RunTime = _runTime;
         }
         #endregion
+
+        public override string MediaInfo()
+        {
+            return base.MediaInfo() + "Run Time : " + this.RunTime+" Mins";
+        }
     }
 }

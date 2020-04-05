@@ -23,7 +23,7 @@ namespace LibraryApp
             this.MediaType = _mediaType;
             SerialNumber++;
             NumberOfTimesLent = 0;
-            IsBorrowed = false;
+            IsBorrowed = true;
             NameOfBorrower = null;
         }
         #endregion
@@ -39,13 +39,13 @@ namespace LibraryApp
         public void LentMedia(string name)
         {
             NumberOfTimesLent++;
-            IsBorrowed = true;
+            IsBorrowed = false;
             NameOfBorrower = name;
         }
 
         public void ReturnMedia()
         {
-            IsBorrowed = false;
+            IsBorrowed = true;
             NameOfBorrower = "";
         }
 
