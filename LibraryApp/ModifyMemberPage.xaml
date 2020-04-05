@@ -14,8 +14,10 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -25,6 +27,6 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Name:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" />
         <TextBox x:Name="fullNameBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalContentAlignment="Center" Margin="10" />
-        <Button x:Name="SubmitRecord" Grid.Column="1" Grid.Row="6" Content="Submit" Margin="10" Grid.ColumnSpan="2" Click="SubmitRecord_Click" />
+        <Button x:Name="SubmitRecord" Grid.Column="1" Grid.Row="3" Content="Submit" Margin="10" Grid.ColumnSpan="2" Click="SubmitRecord_Click" />
     </Grid>
 </Page>

@@ -24,6 +24,7 @@ namespace LibraryApp
         {
             InitializeComponent();
             //mediaGrid.ItemsSource =null;
+            //ModifyMedia.Foreground = Brushes.Blue//;
             mediaGrid.ItemsSource = Library.AllMedia;
             libraryMembersGrid.ItemsSource = Library.allLibraryMember;
         }
