@@ -17,10 +17,11 @@ namespace LibraryApp
             this.PageCount = _pageCount;
         }
         #endregion
-
+        #region public methods
         public override string MediaInfo()
         {
             return base.MediaInfo() + "Page count : " + this.PageCount;
         }
+        #endregion
     }
 }

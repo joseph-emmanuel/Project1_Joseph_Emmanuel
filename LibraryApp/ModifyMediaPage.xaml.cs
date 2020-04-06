@@ -20,8 +20,11 @@ namespace LibraryApp
     /// </summary>
     public partial class ModifyMediaPage : Page
     {
+        #region Class Veriables
         Media toModify;
         object previouscontent;
+        #endregion
+        #region construtor
         public ModifyMediaPage(Media _toModify, object _previousContent)
         {
             InitializeComponent();
@@ -29,6 +32,8 @@ namespace LibraryApp
             previouscontent = _previousContent;
             SetInitialValues();
         }
+        #endregion
+        #region Private Methods
         private void SetInitialValues()
         {
             titleTextBox.Text = toModify.Title;
@@ -40,5 +45,6 @@ namespace LibraryApp
             ((MainWindow)(Application.Current.MainWindow)).RefreshDataGrid();
             Application.Current.MainWindow.Content = previouscontent;
         }
+        #endregion
     }
 }

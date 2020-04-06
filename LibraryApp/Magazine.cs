@@ -8,7 +8,7 @@ namespace LibraryApp
 {
     class Magazine:Book
     {
-        #region Public Properties
+        #region Public Properties 
         public int IssueNumber { get; private set; }
         #endregion
         #region Cunstructor
@@ -17,9 +17,11 @@ namespace LibraryApp
             this.IssueNumber = _issueNumber;
         }
         #endregion
+        #region Public Methods 
         public override string MediaInfo()
         {
             return base.MediaInfo() + "\nIssue Number : " + this.IssueNumber;
         }
+        #endregion
     }
 }

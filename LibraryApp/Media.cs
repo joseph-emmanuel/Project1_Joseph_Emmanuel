@@ -8,7 +8,7 @@ namespace LibraryApp
 {
     public abstract class Media
     {
-        #region Public Properties
+        #region Public Properties 
         public string Title { get; private set;}
         public string MediaType { get; private set;}
         public int SerialNumber { get; private set; } = 1000;

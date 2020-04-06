@@ -20,8 +20,11 @@ namespace LibraryApp
     /// </summary>
     public partial class ModifyMemberPage : Page
     {
+        #region Class Veriables
         LibraryMember toModify;
         object previouscontent;
+        #endregion
+        #region construtor
         public ModifyMemberPage(LibraryMember _toModify, object _previousContent)
         {
             InitializeComponent();
@@ -29,6 +32,8 @@ namespace LibraryApp
             previouscontent = _previousContent;
             SetInitialValues();
         }
+        #endregion
+        #region Private Methods
         private void SetInitialValues()
         {
             fullNameBox.Text = toModify.Name;
@@ -39,6 +44,6 @@ namespace LibraryApp
             ((MainWindow)(Application.Current.MainWindow)).RefreshDataGrid();
             Application.Current.MainWindow.Content = previouscontent;
         }
-       
+        #endregion
     }
 }

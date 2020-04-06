@@ -8,7 +8,7 @@ namespace LibraryApp
 {
     static class Library
     {
-        #region Media List
+        #region Media Lists
         public static List<Media> AllMedia { get; private set; } = new List<Media>()
         {
             #region Book List

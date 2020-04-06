@@ -10,6 +10,13 @@
       Title="ModifyMediaPage">
 
     <Grid>
+        <!--#region` Back Ground-->
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\josep\source\repos\Project1_Joseph_Emmanuel\LibraryApp\Resources\library.jpg"
+                    Stretch="UniformToFill" />
+        </Grid.Background>
+        <!--#endregion-->
+        <!--#region coloumn and row defenitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -28,14 +35,15 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+        <!--#endregion-->
+        <!--#region text box and other elements-->
         <TextBlock Text="Title : " Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" />
         <TextBox x:Name="titleTextBox" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" VerticalContentAlignment="Center" Margin="10" />
 
         <TextBlock Text="Type:" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" />
         <TextBox x:Name="typeTextBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" VerticalContentAlignment="Center" Margin="10" />
 
-
         <Button x:Name="SubmitRecord" Grid.Column="1" Grid.Row="6" Content="Submit" Margin="10" Grid.ColumnSpan="2" Click="SubmitRecord_Click" /> 
+        <!--#endregion-->
     </Grid>
 </Page>

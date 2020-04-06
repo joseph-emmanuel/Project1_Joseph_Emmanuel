@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="701.25" Width="839">
     <Grid Margin="25" >
+        <!--#region Back Ground-->
         <Grid.Background>
             <ImageBrush ImageSource="C:\Users\josep\source\repos\Project1_Joseph_Emmanuel\LibraryApp\Resources\library.jpg"
                     Stretch="UniformToFill" />
         </Grid.Background>
+        <!--#endregion-->
+        <!--#region coloumn and row defenitions-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -30,6 +33,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <!--#endregion-->
         <!--#region Buttons-->
         <Button x:Name="LendMedia" Grid.Column="0" Grid.Row="0" Content="Lend Media" Margin="10" Grid.ColumnSpan="1" Click="LendMedia_Click" FontWeight="Bold" FontFamily="Times New Roman">
             <Button.Background>

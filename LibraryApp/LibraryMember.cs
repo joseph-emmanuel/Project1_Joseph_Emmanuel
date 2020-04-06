@@ -8,7 +8,7 @@ namespace LibraryApp
 {
     public class LibraryMember
     {
-        #region  Properties
+        #region public  Properties
         public string Name { get; private set; }
         public List<Media> borrowHistory;
         public List<Media> currentlyBorrowed;
@@ -57,17 +57,6 @@ namespace LibraryApp
         {
             currentlyBorrowed.Remove(media);
         }
-
-
-
-        /*        
-        *//*        public virtual string MemberInfo()
-                {
-                    var info = "Serial No. : " + SerialNumber + "\nTitle : " + Title + "\nType : " + MediaType + "\nNo. of times lent : " +
-                        NumberOfTimesLent + "\nAvailable : " + ((IsBorrowed) ? "Yes" : "No") + "\nCurrently borrowed by : "
-                        + NameOfBorrower + "\n";
-                    return info;
-                }*/
         #endregion
     }
 }

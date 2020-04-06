@@ -15,19 +15,18 @@ using System.Windows.Shapes;
 
 namespace LibraryApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
+        #region constructor
         public MainWindow()
         {
             InitializeComponent();
-            //mediaGrid.ItemsSource =null;
-            //ModifyMedia.Foreground = Brushes.Blue//;
             mediaGrid.ItemsSource = Library.AllMedia;
             libraryMembersGrid.ItemsSource = Library.allLibraryMember;
         }
+        #endregion
+        #region Public Methods 
         public void RefreshDataGrid()
         {
             libraryMembersGrid.ItemsSource = null;
@@ -36,12 +35,8 @@ namespace LibraryApp
             mediaGrid.ItemsSource = null;
             mediaGrid.ItemsSource = Library.AllMedia;
         }
-
-
-
-
-
-
+        #endregion
+        #region Private Methods 
         private void MediaInfo_Click(object sender, RoutedEventArgs e)
         {
             if (mediaGrid.SelectedItem == null)
@@ -142,5 +137,6 @@ namespace LibraryApp
             }
             RefreshDataGrid();
         }
+        #endregion
     }
 }
